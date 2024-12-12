@@ -1,0 +1,17 @@
+{
+  "name": "ligathaalportal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "concurrently \"npm run build:front\" \"npm run build:back\"",
+    "build:front": "cd front && npm run build",
+    "build:back": "cd server && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
