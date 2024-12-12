@@ -9,7 +9,10 @@
   "scripts": {
     "build": "concurrently \"npm run build:front\" \"npm run build:back\"",
     "build:front": "cd front && npm run build",
-    "build:back": "cd server && npm run build"
+    "build:back": "cd server && npm run build",
+    "start":"concurrently \"npm run start:front\" \"npm run start:back\"",
+    "start:front":"cd front && npm run dev",
+    "start:back":"cd server && node ./index"
   },
   "keywords": [],
   "author": "",
