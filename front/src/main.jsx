@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Axios from 'axios'
 import { setupCache } from 'axios-cache-interceptor'
-import RoutesComp from './Pages/RoutesComp'
+
 import { BrowserRouter } from 'react-router-dom'
 import { store, persistor } from './redux/store'
 import { PersistGate } from 'redux-persist/lib/integration/react'
@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <RoutesComp />
+
           <App />
         </PersistGate>
       </Provider>
