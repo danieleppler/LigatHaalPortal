@@ -6,7 +6,7 @@ import { TeamViewComp } from './TeamViewComp'
 
 
 
-const server_url = 'http://localhost:3000'
+const server_url = 'https://ligathaalportal.onrender.com/'
 const { data: teams } = await axios.get(`${server_url}/teams`)
 
 
