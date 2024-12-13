@@ -7,8 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "npm run build:front ",
-    "build:front": "cd front && npm run build",
+    "git":"git add --all && git commit -m \"minor modifcatins\" && git push origin master",
+    "build": " npm run build:front ",
+    "build:front": "cd front && npm i && npm run build",
     "start": "\"npm run start:back\"",
     "start:front": "cd front && npm run dev",
     "start:back": "cd server && node ./index"
