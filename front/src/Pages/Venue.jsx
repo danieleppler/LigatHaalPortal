@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 
-const server_url = 'http://localhost:3000'
+const server_url = 'https://ligathaalportal.onrender.com/'
 
 const Venue = ({ venueid }) => {
 
