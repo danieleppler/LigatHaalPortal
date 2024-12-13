@@ -10,11 +10,14 @@
     "build": "concurrently \"npm run build:front\" \"npm run build:back\"",
     "build:front": "cd front && npm run build",
     "build:back": "cd server && npm run build",
-    "start":"\"npm run start:back\"",
-    "start:front":"cd front && npm run dev",
-    "start:back":"cd server && node ./index"
+    "start": "\"npm run start:back\"",
+    "start:front": "cd front && npm run dev",
+    "start:back": "cd server && node ./index"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.0"
+  }
 }
