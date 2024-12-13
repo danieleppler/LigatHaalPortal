@@ -1,5 +1,6 @@
 var express = require('express')
 const cors = require('cors')
+const path = require('path')
 
 require('./axios')
 require('dotenv').config()
@@ -9,6 +10,12 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
+
+app.use(express.static(path.join(__dirname,'../front/dist')))
+
+ app.get('/app',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../front/dist/index.html'))
+ })
 
 const teamsController =  require('./controllers/teamsController')
 app.use('/teams',teamsController)

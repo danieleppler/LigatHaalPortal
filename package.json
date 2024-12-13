@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "concurrently \"npm run build:front\" \"npm run build:back\"",
+    "build": "npm run build:front ",
     "build:front": "cd front && npm run build",
-    "build:back": "cd server && npm run build",
+ 
     "start": "\"npm run start:back\"",
     "start:front": "cd front && npm run dev",
     "start:back": "cd server && node ./index"
