@@ -4,9 +4,7 @@ import axios from 'axios'
 import { TeamViewComp } from './TeamViewComp'
 
 
-
-
-const server_url = 'https://ligathaalportal.onrender.com/'
+const server_url = 'https://ligathaalportal.onrender.com'
 const { data: teams } = await axios.get(`${server_url}/teams`)
 
 

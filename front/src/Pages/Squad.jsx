@@ -8,7 +8,7 @@ let base_players = []
 
 const Squad = ({ teamid }) => {
 
-    const server_url = 'https://ligathaalportal.onrender.com/'
+    const server_url = 'https://ligathaalportal.onrender.com'
     const [players, set_players] = useState()
     const [position_filter_value, set_position_filter_value] = useState()
 
