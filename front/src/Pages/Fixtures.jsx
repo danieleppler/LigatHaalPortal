@@ -5,7 +5,7 @@ const Fixtures = ({ team_id }) => {
 
     const [fixtures, set_fixtures] = useState([])
 
-    const server_url = 'https://ligathaalportal.onrender.com'
+    const server_url = import.meta.env.VITE_SERVER
 
     useEffect(() => {
         const fetchData = async () => {

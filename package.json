@@ -7,12 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "git":"git add --all && git commit -m \"minor modifcatins\" && git push origin master",
-    "build": " npm run build:front ",
-    "build:front": "cd front && npm i && npm run build",
-    "start": "npm run start:back",
-    "start:front": "cd front && npm run dev",
-    "start:back": "cd server && node ./index"
+    "git":"git add --all && git commit -m \"cacheing mechanism added\" && git push origin master",
+    "build": "cd front && npm i && npm run build ",
+    "start": "cd server && npm run prod"
   },
   "keywords": [],
   "author": "",

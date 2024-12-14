@@ -4,7 +4,7 @@ import axios from 'axios'
 import { TeamViewComp } from './TeamViewComp'
 
 
-const server_url = 'https://ligathaalportal.onrender.com'
+const server_url = import.meta.env.VITE_SERVER
 const { data: teams } = await axios.get(`${server_url}/teams`)
 
 
@@ -15,9 +15,9 @@ function App() {
 
   return (
     <>
+      {console.log(server_url)}
       <ul className='main-toolbar flexbox-container'>
         {
-
           teams.map((x) => {
             return <li key={x.team.id}>
               <img className="team-logo" onClick={() => {
