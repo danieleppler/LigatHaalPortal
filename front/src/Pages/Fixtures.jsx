@@ -11,7 +11,6 @@ const Fixtures = ({ team_id }) => {
         const fetchData = async () => {
             const { data: fixtures } = await axios.get(`${server_url}/Fixtures/${team_id}`)
             set_fixtures(fixtures.response)
-            console.log(fixtures.response)
         }
         fetchData()
     }, [])

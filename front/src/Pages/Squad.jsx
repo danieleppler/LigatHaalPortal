@@ -20,16 +20,25 @@ const Squad = ({ teamid }) => {
         const fetchData = async () => {
             const { data: players } = await axios.get(`${server_url}/players/${teamid}`)
             const response = players[0].players
-            set_players(response)
-            base_players = response
+            if (response) {
+                set_players(response)
+                base_players = response
+            }
+
+            else {
+                set_players(players)
+                base_players = players
+            }
+
         }
         fetchData()
     }, [teamid])
 
     useEffect(() => {
         if (position_filter_value) {
+
             if (position_filter_value !== 'All')
-                set_players(base_players.filter((x) => x.position === position_filter_value))
+                set_players(base_players?.filter((x) => x.position === position_filter_value))
             else set_players(base_players)
         }
     }, [position_filter_value])

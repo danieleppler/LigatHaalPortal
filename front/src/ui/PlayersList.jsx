@@ -4,8 +4,11 @@ const PlayersList = ({ players }) => {
 
     let groupedPlayers = undefined
 
-    if (players)
+    if (players) {
         groupedPlayers = Object.groupBy(players, ({ position }) => position)
+
+    }
+
 
     return (
         <div >

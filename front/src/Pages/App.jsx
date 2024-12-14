@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      {console.log(server_url)}
+
       <ul className='main-toolbar flexbox-container'>
         {
           teams.map((x) => {

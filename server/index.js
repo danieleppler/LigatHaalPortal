@@ -23,7 +23,7 @@ if(process.env.NODE_ENV == "production"){
   
 }
 
-app.use(cache(720)) //in minutes
+app.use(cache(60)) //in minutes
 
 const teamsController =  require('./controllers/teamsController')
 app.use('/teams',teamsController)
