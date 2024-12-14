@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "git":"git pull origin master && git add --all && git commit -m \"minor modifcation\" && git push origin master -f",
+    "git":"git pull origin master && git add --all && git commit -m \"removed console.logs\" && git push origin master -f",
     "build": "cd front && npm i && npm run build ",
     "start": "cd server && npm i && npm run prod"
   },

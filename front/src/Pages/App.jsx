@@ -6,7 +6,7 @@ import { TeamViewComp } from './TeamViewComp'
 
 const server_url = import.meta.env.VITE_SERVER
 
-console.log(server_url)
+
 const { data: teams } = await axios.get(`${server_url}/teams`)
 
 
