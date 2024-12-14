@@ -23,8 +23,6 @@
     "npm": "^10.9.0",
     "path": "^0.12.7",
     "cross-env": "^7.0.3"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3"
   }
+
 }
