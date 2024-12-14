@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "git":"git add --all && git commit -m \"cacheing mechanism added\" && git push origin master",
+    "git":"git add --all && git commit -m \"cacheing mechanism added\" && git push origin master -f",
     "build": "cd front && npm i && npm run build ",
     "start": "cd server && npm run prod"
   },
