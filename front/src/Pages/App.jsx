@@ -7,7 +7,12 @@ import { TeamViewComp } from './TeamViewComp'
 const server_url = import.meta.env.VITE_SERVER
 
 
-const { data: teams } = await axios.get(`${server_url}/teams`)
+const response = await axios.get(`${server_url}/teams`)
+
+let teams = []
+
+if (response.status === 200)
+  teams = response.data
 
 
 function App() {

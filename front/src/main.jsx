@@ -11,7 +11,7 @@ const axiosInstance = Axios.create()
 export const httpClient = setupCache(axiosInstance, { debug: console.log })
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+
+  <App />
+
 )

@@ -166,5 +166,21 @@ height: 5vh;
   cursor: pointer;
 }
 
+.req-fallback{
+  justify-self: center;
+  position: relative;
+  top: 10vh;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+}
 
-
+.req-fallback::after{
+  
+  content: '\f5b4';
+   font-family: FontAwesome;
+   font-size: xx-large;
+   position: absolute;
+   top: 150%;
+   left: 50%;
+}

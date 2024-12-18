@@ -1,6 +1,10 @@
 const axios = require('../axios')
 
 const get_league_data =async (league_id,season,apiKey) =>{
+
+  
+
+
     var config = {
         method: 'get',
         url: `https://v3.football.api-sports.io/leagues?id=${league_id}&season=${season}`,
@@ -10,15 +14,7 @@ const get_league_data =async (league_id,season,apiKey) =>{
         }
       };
     
-    const data = axios(config)
-    .then(function (response) {
-      return response.data.response;
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-    return data;
+    return await axios(config)
 }
 
 const mock_data = async () =>{

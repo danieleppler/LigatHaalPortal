@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import PlayersList from '../ui/PlayersList'
 import PositionFilter from '../ui/PositionFilter'
-
+import FallBackFactory from '../FallBacks/FallBackFactory'
 
 let base_players = []
 
@@ -14,21 +14,20 @@ const Squad = ({ teamid }) => {
 
     const [position_filter_value, set_position_filter_value] = useState()
 
+    const [fallback, set_fallback] = useState()
 
 
     useEffect(() => {
         const fetchData = async () => {
-            const { data: players } = await axios.get(`${server_url}/players/${teamid}`)
-            const response = players[0].players
-            if (response) {
-                set_players(response)
-                base_players = response
+            const response = await axios.get(`${server_url}/players/${teamid}`)
+            if (response.status == 200) {
+                set_players(response.data[0].players)
+                base_players = response.data[0].players
             }
-
-            else {
-                set_players(players)
-                base_players = players
-            }
+            if (response.status === 206 && response.data.massage === "daily request limit")
+                set_fallback('dailyfallback')
+            if (response.status === 206 && response.data.massage === "minutely request limit")
+                set_fallback('minutelyfallback')
 
         }
         fetchData()
@@ -48,6 +47,7 @@ const Squad = ({ teamid }) => {
         <div className='relative-10'>
             <PositionFilter set_position_filter_value={set_position_filter_value} />
             <PlayersList players={players} />
+            {fallback && <FallBackFactory type={fallback} />}
         </div>
     )
 }
