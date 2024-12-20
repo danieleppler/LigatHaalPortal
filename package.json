@@ -8,8 +8,8 @@
   },
   "scripts": {
     "git":"git pull origin master && git add --all && git commit -m \"minor fixes\" && git push origin master -f",
-    "build": "cd front && npm i && npm run build ",
-    "start": "cd server &&  npm run prod"
+    "build": "cd front && npm i && npm run build && cd .. && cd server && npm run build",
+    "start": "cd server && npm run prod"
   },
   "keywords": [],
   "author": "",
