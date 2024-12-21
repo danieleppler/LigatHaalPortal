@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "git":"git pull origin master && git add --all && git commit -m \"minor fixes\" && git push origin master -f",
+    "git": "git pull origin master && git add --all && git commit -m \"minor fixes\" && git push origin master -f",
     "build": "cd front && npm i && npm run build && cd .. && cd server && npm i",
     "start": "cd server && npm run prod"
   },
@@ -15,7 +15,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vite": "^5.4.11",
-    "@vitejs/plugin-react": "^4.3.4"
+    "@vitejs/plugin-react": "^4.3.4",
+    "fly": "^4.6.11",
+    "vite": "^5.4.11"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.9"
   }
 }
