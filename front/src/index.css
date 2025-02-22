@@ -1,5 +1,15 @@
-body{
+body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensures a minimum height equal to the viewport height */
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
@@ -10,30 +20,32 @@ ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: start;
   height: fit-content;
   position: relative;
 }
 
-.flex-start{
-  justify-content:start;
+.flex-gap-20 {
+  column-gap: 5vw;
+}
+
+.flex-align-items-center {
+  align-items: center;
+}
+
+.flex-start {
+  justify-content: start;
 }
 
 .team-logo {
-height: 5vh;
-
+  height: 5vh;
+  cursor: pointer;
 }
 
-.main-toolbar {
-  border: 3px solid black;
-  background-color: rgba(0, 70, 201, 0.849);  
-  position: relative;
-  left: 0;
-  right: 0;
-  padding: 10px;
+.team-logo:hover {
+  scale: 1.2;
 }
-
 
 .hoverable-buttons-conatiner > li {
   border: 3px solid black;
@@ -42,16 +54,16 @@ height: 5vh;
   background: rgb(238, 232, 232);
 }
 
-.hoverable-buttons-conatiner{
-
-}
-
-.display-flex{
+.display-flex {
   display: flex;
 }
 
-.flex-cols{
+.flex-cols {
   flex-direction: column;
+}
+
+.flex-rows {
+  flex-direction: row;
 }
 
 .hoverable-buttons-conatiner > li:hover {
@@ -59,53 +71,53 @@ height: 5vh;
   cursor: pointer;
 }
 
-.pos-relative{
+.pos-relative {
   position: relative;
 }
 
-.width-100{
+.width-100 {
   width: 100%;
 }
 
-.pos-absolute{
+.pos-absolute {
   position: absolute;
 }
 
-.justify-center{
+.justify-center {
   align-items: center;
 }
 
-#team-title{
+#team-title {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  top: 50%;
-  left: 2%;
   font-size: larger;
   font-weight: 800;
+  justify-content: center;
+  color: white;
 }
 
-.relative-10{
+.relative-10 {
   position: relative;
   top: 10vh;
 }
 
-.relative-5-bottom{
+.relative-5-bottom {
   position: relative;
   bottom: 5vh;
 }
 
-.flexbox-container-cols{
-  display:flex;
+.flexbox-container-cols {
+  display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
 }
 
-.position-title{
+.position-title {
   position: relative;
   left: 2vw;
   top: 10vh;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: black;
+  font-size: larger;
+  color: white;
   letter-spacing: 2px;
   border: 1px;
 }
@@ -117,56 +129,64 @@ height: 5vh;
 .player-card {
   background: rgb(59, 1, 59);
   padding: 20px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  z-index: 999;
 }
 
-.text-white{
-  color: white
+.text-white {
+  color: white;
 }
 
-.row-gap-1{
+.row-gap-1 {
   row-gap: 1vh;
 }
-
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .score-box {
   border: 3px solid black;
   padding: 20px;
-  width: 20%;
   align-content: center;
   font-weight: 800;
   background: beige;
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 10px;
+  column-gap: 20px;
+  flex: 1 0 20vw; /* explanation below */
 }
 
-.col-gap-1{
+.fixture-position {
+  position: relative;
+  margin-right: 20px;
+}
+
+.col-gap-1 {
   column-gap: 1vw;
 }
 
-.border-circle{
+.border-circle {
   border-radius: 50%;
 }
 
-.border-white{
+.border-white {
   border: 5px solid white;
 }
 
-.position-filter-buttons{
-  padding: 20px 10px;
+.position-filter-buttons {
+  padding: 20px 20px;
   border-radius: 50%;
   border: 5px solid black;
   position: relative;
   bottom: 2vh;
 }
 
-.position-filter-buttons:hover{
+.position-filter-buttons:hover {
   background: #615d5d;
   cursor: pointer;
 }
 
-.req-fallback{
+.req-fallback {
   justify-self: center;
   position: relative;
   top: 10vh;
@@ -175,12 +195,65 @@ height: 5vh;
   font-size: larger;
 }
 
-.req-fallback::after{
-  
-  content: '\f5b4';
-   font-family: FontAwesome;
-   font-size: xx-large;
-   position: absolute;
-   top: 150%;
-   left: 50%;
+.req-fallback::after {
+  content: "\f5b4";
+  font-family: FontAwesome;
+  font-size: xx-large;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+}
+
+.main-bg {
+  background-image: url("/images/soccer_pitch.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  flex: 1 1;
+  height: 100%;
+}
+
+.main-toolbar {
+  border: 3px solid black;
+  background-color: rgba(0, 70, 201, 0.849);
+  position: relative;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  flex: 0 0;
+}
+
+.main--page-preview-text {
+  color: white;
+  padding: 10%;
+  line-height: 50px;
+  font-size: xx-large;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  -webkit-text-stroke: 1px black; /* width and color */
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -100%); /* Start above the center */
+  animation: upper-from-above 2s ease-out forwards;
+}
+
+.text-white {
+  color: white;
+}
+
+@keyframes upper-from-above {
+  from {
+    transform: translate(0, -100%);
+  }
+  to {
+    transform: translate(0, 0%);
+  }
+}
+
+@media (min-height: 500px) {
+  .main-bg {
+    background-image: url("/images/soccer_pitch.jpg");
+    background-repeat: repeat;
+    background-size: 100% auto;
+    height: 100%;
+  }
 }
